@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <form action="/register" method="post">
+        <label for="name">Full Name:</label>
+        <input id="name" name="name" type="text" placeholder="Enter name" required>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        <small>Format: 123-456-7890</small>
+        <input type="date" id="date" name="date" required>
+        <input type ="time" id="timefield" name="timefield" value="10:00" required >
+        <input id='submit' type="submit">
+
+
+        <script>
+            // Calculate the current date
+            var currentDate = new Date().toISOString().split('T')[0]
+
+            // Calculate the date one month from now
+            var oneMonthFromNow = new Date();
+            oneMonthFromNow.setMonth(oneMonthFromNow.getMonth() + 1);
+            var maxDate = oneMonthFromNow.toISOString().split('T')[0]
+
+
+            // Set the minimum and maximum dates
+            document.getElementById('date').min = currentDate;
+            document.getElementById('date').max = maxDate;
+        </script>
+
+        <script>
+            // Calculate the current date
+            var currentDate = new Date().toISOString().split('T')[0] + 'T';
+
+            var openingHour = 10; // 10:00 AM in 24-hour format
+            var closingHour = 19; // 7:00 PM in 24-hour format
+
+            var timeInput = document.getElementById("timefield");
+
+            timeInput.addEventListener("input", function () {
+                var selectedHour = parseInt(timeInput.value.split(":")[0]);
+
+                if (selectedHour < openingHour || selectedHour > closingHour) {
+                    // Clear the selected time if it's outside the range
+                     timeInput.value = '';
+                    alert("Please choose a time between 10:00 AM and 7:00 PM.");
+                }
+            });
+        </script>
+
+
+
+    </form>
+
+    <a href="/">Return to home page</a>
+{% endblock body %}

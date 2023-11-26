@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block style %}
+<style>
+   
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    nav {
+        background-color: blue;
+        color: white;
+        padding: 1px;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    li {
+        float: right;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: left;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        color: lightblue
+    }
+    </style>
+{% endblock%}
+
+{% block body %}
+<nav>
+    <ul>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/account">Account</a></li>
+        <li><a href="/">Home</a></li>
+    </ul>
+</nav>
+<a href="/appointments">Book an appointment</a>
+{% endblock body %}
