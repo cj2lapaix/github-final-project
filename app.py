@@ -1,9 +1,10 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session, url_for
 from flask_session import Session
 
 app = Flask(__name__)
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
+app.config['STATIC_FOLDER'] = 'static'
 Session(app)
 
 @app.route("/")
@@ -28,9 +29,9 @@ def register():
     if request.method == "POST":
         name = request.form.get("name")
         phone = request.form.get("phone")
-        timefield = request.form.get("timefield")
-        date = request.form.get("date")
-        registrant = {'name': name, 'phone': phone, "timefield": timefield, "date": date}
+        time = request.form.get("Message")
+        date = request.form.get("email")
+        registrant = {'name': name, 'phone': phone, "Message": time, "email": date}
 
         # Get the existing registrants from the session or initialize an empty list
         registrants = session.get("registrants", [])

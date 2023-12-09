@@ -1,18 +1,25 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block body %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StraightStich</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
 <body>
     <!-- ============================================ -->
     <!--                 Navigation                   -->
     <!-- ============================================ -->
 
     <header id="cs-navigation">
-
+       
         <div class="cs-container">
             <!--Nav Logo-->
             <!--Logo is turned white in the css with a filter on dark mode-->
-             <a href="/" class="cs-logo" aria-label="back to home">
-                <img src="{{ url_for('static', filename='letterlogo.png') }}" alt="logo" width="210" height="29" aria-hidden="true" decoding="async">
+             <a href="http://127.0.0.1:3000/home.html" class="cs-logo" aria-label="back to home">
+                <img src="img\letterlogo.png" alt="logo" width="210" height="29" aria-hidden="true" decoding="async">
             </a>
             <!--Navigation List-->
             <nav class="cs-nav" role="navigation">
@@ -28,12 +35,12 @@
                 <div class="cs-ul-wrapper">
                     <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
                         <li class="cs-li">
-                            <a href="/" class="cs-li-link cs-active">
+                            <a href="http://127.0.0.1:3000/home.html" class="cs-li-link cs-active">
                                 Home
                             </a>
                         </li>
                         <li class="cs-li">
-                            <a href="/appointments" class="cs-li-link">
+                            <a href=http://127.0.0.1:3000/appointment.html class="cs-li-link">
                                 Appointment
                             </a>
                         </li>
@@ -71,7 +78,7 @@
                 <a href="tel:+84 1985 33 999" class="cs-phone">
                     <img class="cs-phone-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/phone-1a.svg"
                         alt="logo" width="24" height="24" aria-hidden="true" decoding="async">
-                    +1 (215)-555-5555
+                    +84 1985 33 999
                 </a>
                 <div class="cs-social">
                     <a href="" class="cs-social-link">
@@ -114,9 +121,9 @@
                 <span class="cs-topper">Welcome to</span>
                 <!--Logo-->
                 <picture class="cs-logo">
-                    <source media="(max-width: 600px)" srcset="static/NounouLogo.png">
-                    <source media="(min-width: 601px)" srcset="static/NounouLogo.png">
-                    <img decoding="async" src="{{ url_for('static', filename='NounouLogo.png') }}" alt="Stitch House Restaurant" width="614"
+                    <source media="(max-width: 600px)" srcset="./img/NounouLogo.png">
+                    <source media="(min-width: 601px)" srcset="img\NounouLogo.png">
+                    <img decoding="async" src="img\NounouLogo.png" alt="Stitch House Restaurant" width="614"
                         height="166">
                 </picture>
                 <p class="cs-text">
@@ -129,9 +136,9 @@
         <!--Background Image-->
         <!--Image is also set as background image in CSS at 1400px for parallax effect-->
         <picture class="cs-background">
-            <source media="(max-width: 600px)" srcset="static\comfortsand.jpg">
-            <source media="(min-width: 601px)" srcset="static\comfortsand.jpg">
-            <img decoding="async" src="{{ url_for('static', filename='comfortsand.jpg') }}" alt="logo" width="1920" height="1000">
+            <source media="(max-width: 600px)" srcset="img\comfortsand.jpg">
+            <source media="(min-width: 601px)" srcset="img\comfortsand.jpg">
+            <img decoding="async" src="img\comfortsand.jpg" alt="logo" width="1920" height="1000">
         </picture>
     </section>
 
@@ -158,10 +165,10 @@
                         <!--Backgorund Image-->
                         <picture class="cs-background">
                             <!--Mobile Image-->
-                            <source media="(max-width: 600px)" srcset="static/girlwater.jpg">
+                            <source media="(max-width: 600px)" srcset="img\girlwater.jpg">
                             <!--Tablet and above Image-->
-                            <source media="(min-width: 601px)" srcset="static/girlwater.jpg">
-                            <img loading="lazy" decoding="async" src="{{ url_for('static', filename='girlwater.jpg') }}" alt="person" width="1280"
+                            <source media="(min-width: 601px)" srcset="img\girlwater.jpg">
+                            <img loading="lazy" decoding="async" src="img\girlwater.jpgg" alt="person" width="1280"
                                 height="568">
                         </picture>
                     </a>
@@ -175,10 +182,10 @@
                         <!--Backgorund Image-->
                         <picture class="cs-background">
                             <!--Mobile Image-->
-                            <source media="(max-width: 600px)" srcset="static/blackfoot.jpg">
+                            <source media="(max-width: 600px)" srcset=img\blackfoot.jpg">
                             <!--Tablet and above Image-->
-                            <source media="(min-width: 601px)" srcset="static/blackfoot.jpg">
-                            <img loading="lazy" decoding="async" src="static/blackfoot.jpg" alt="person" width="1280"
+                            <source media="(min-width: 601px)" srcset="img\blackfoot.jpg">
+                            <img loading="lazy" decoding="async" src="img\blackfoot.jpg" alt="person" width="1280"
                                 height="568">
                         </picture>
                     </a>
@@ -193,10 +200,10 @@
                         <!--Backgorund Image-->
                         <picture class="cs-background">
                             <!--Mobile Image-->
-                            <source media="(max-width: 600px)" srcset="static/tea.jpg">
+                            <source media="(max-width: 600px)" srcset="img\tea.jpg">
                             <!--Tablet and above Image-->
-                            <source media="(min-width: 601px)" srcset="static/tea.jpg">
-                            <img loading="lazy" decoding="async" src="{{ url_for('static', filename='tea.jpg') }}" alt="person" width="1280"
+                            <source media="(min-width: 601px)" srcset="img\tea.jpg">
+                            <img loading="lazy" decoding="async" src="img\tea.jpg" alt="person" width="1280"
                                 height="568">
                         </picture>
                     </a>
@@ -211,10 +218,10 @@
                         <!--Backgorund Image-->
                         <picture class="cs-background">
                             <!--Mobile Image-->
-                            <source media="(max-width: 600px)" srcset="static/oil.jpg">
+                            <source media="(max-width: 600px)" srcset="img\oil.jpg">
                             <!--Tablet and above Image-->
-                            <source media="(min-width: 601px)" srcset="static/oil.jpg">
-                            <img loading="lazy" decoding="async" src="{{ url_for('static', filename='oil.jpg') }}" alt="person" width="1280"
+                            <source media="(min-width: 601px)" srcset="img\oil.jpg">
+                            <img loading="lazy" decoding="async" src="img\oil.jpg" alt="person" width="1280"
                                 height="568">
                         </picture>
                     </a>
@@ -257,7 +264,7 @@
             <div class="cs-logo-group">
                 <a aria-label="go back to home" class="cs-logo" href="">
                     <img class="cs-logo-img light" aria-hidden="true" loading="lazy" decoding="async"
-                    src="{{ url_for('static', filename='NounouLogo.png') }}" alt="logo" width="240" height="32">
+                        src="img\NounouLogo.png" alt="logo" width="240" height="32">
                 </a>
                 <p class="cs-text">
                     Our mission is to provide professional, therapeutic massage treatments in a serene, welcoming environment. We are committed to helping our diverse clientele relax, relieve pain, reduce stress, and improve their overall wellness. Our experienced massage therapists customize each session using proven techniques that heal both body and mind.
@@ -321,4 +328,5 @@
 
 
 </body>
-{% endblock %}
+
+</html>
